@@ -440,6 +440,14 @@
         if(data && data.success){
           wrap.style.display = 'none';
           document.getElementById(prefix==='t'?'successTrial':'successOrder').style.display = 'block';
+          if(type === 'تجربة مجانية'){
+            const a = document.createElement('a');
+            a.href = 'Skeleton_System.zip';
+            a.download = 'Skeleton_System.zip';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+          }
           setTimeout(()=>{
             closeModal(prefix==='t'?'trial':'order');
             wrap.style.display = '';
